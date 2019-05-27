@@ -1,0 +1,8 @@
+Set czytelnik = ##class(Biblioteka.Czytelnik).%OpenId(1)
+Set ksiazka = ##class(Biblioteka.Ksiazka).%OpenId(1)
+write czytelnik.wypozyczKsiazke(ksiazka)
+
+Do ##class(Biblioteka.Ksiazka).Populate(10)
+Do ##class(Biblioteka.Pracownik).Populate(10)
+Do ##class(Biblioteka.Czytelnik).Populate(10)
+Do ##class(Biblioteka.Autor).Populate(10)

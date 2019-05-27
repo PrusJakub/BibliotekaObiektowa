@@ -1,4 +1,4 @@
-Class Biblioteka.Pracownik Extends Biblioteka.Osoba
+Class Biblioteka.Pracownik Extends (%Persistent, %Populate, Biblioteka.Osoba)
 {
 Method kimJestes() As %String
 {
