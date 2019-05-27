@@ -1,8 +1,6 @@
 Class Biblioteka.Wypozyczenie Extends (%Persistent, %Populate, %XML.Adaptor, %ZEN.DataModel.Adaptor)
 {
 
-Property DataWypozyczenia As %Date [ Required ];
-
 Relationship Czytelnik As Biblioteka.Czytelnik [ Cardinality = one, Inverse = Login ];
 
 Relationship Ksiazka As Biblioteka.Ksiazka [ Cardinality = one, Inverse = IdKsiazki ];
@@ -18,6 +16,17 @@ Method oddajKsiazke() As %String
 	}
 	ELSE {
 		Return "Blad podczas wykonywania operacji"
+	}
+}
+
+Method wypozyczKsiazke() As %String
+{
+	IF ..CzyOddanaKsiazka = 1 {
+		Set ..CzyOddanaKsiazka = 0
+		Do %Save()
+		Return "Wypozyczono ksiazke"
+	} ELSE {
+		Return "Ksiazka nie moze zostac wypozyczona"
 	}
 }
 

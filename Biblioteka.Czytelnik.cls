@@ -1,6 +1,22 @@
 Class Biblioteka.Czytelnik Extends Biblioteka.Osoba
 {
 
-Relationship Login As Biblioteka.Wypozyczenie [ Cardinality = many, Inverse = Czytelnik, Required ];
+Relationship Login As Biblioteka.Wypozyczenie [ Cardinality = many, Inverse = Czytelnik ];
+
+Method wypozyczKsiazke(ByRef ksiazka As Ksiazka) As %String
+{
+	Set wypozyczenie = ##class(Biblioteka.Wypozyczenie).%New()
+	Set wypozyczenie.Ksiazka = ksiazka
+	Set wypozyczenie.Czytelnik = $this
+	Set wypozyczenie.CzyOddanaKsiazka = 0
+	Do wypozyczenie.%Save()
+	
+	Return "Ksiazka wypozyczona"
+}
+
+Method kimJestes() As %String
+{
+	Return "Czytelnik "_..Imie_" "_..Nazwisko
+}
 
 }

@@ -9,8 +9,8 @@ Property Imie As %String;
 
 Property Nazwisko As %String [ Required ];
 
-Relationship Biblioteka As Biblioteka.Biblioteka [ Cardinality = one, Inverse = Osoby ];
-
-Index BibliotekaIndex On Biblioteka;
+Method kimJestes() As %String
+{
+}
 
 }
