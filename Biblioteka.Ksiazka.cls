@@ -1,7 +1,7 @@
 Class Biblioteka.Ksiazka Extends (%Persistent, %Populate)
 {
 
-Property IdKsiazki As %Numeric [ Required ];
+Relationship IdKsiazki As Biblioteka.Wypozyczenie [ Cardinality = many, Inverse = Ksiazka, Required ];
 
 Index IdKsiazkiIndex On IdKsiazki [ Unique ];
 

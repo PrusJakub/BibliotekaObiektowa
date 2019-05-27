@@ -1,6 +1,6 @@
 Class Biblioteka.Czytelnik Extends Biblioteka.Osoba
 {
 
-Property Login As %String [ Required ];
+Relationship Login As Biblioteka.Wypozyczenie [ Cardinality = many, Inverse = Czytelnik, Required ];
 
 }
