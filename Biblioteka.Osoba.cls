@@ -7,6 +7,7 @@ Property Nazwisko As %String [ Required ];
 
 Method kimJestes() As %String
 {
+	Return "Osoba "_..Imie_" "_..Nazwisko
 }
 
 }

@@ -7,12 +7,12 @@ Relationship Autor As Biblioteka.Autor [ Cardinality = one, Inverse = Ksiazki ];
 
 Relationship Biblioteka As Biblioteka.Biblioteka [ Cardinality = one, Inverse = Ksiazki ];
 
-Property ISBN As %Numeric(MAXVAL = 9999999999999, MINVAL = 1000000000000) [ Required ];
+Property ISBN As %Integer [ Required ];
 
 Property Tytul As %String [ Required ];
 
 Property Opis As %String;
 
-Property RokWydania As %Date [ Required ];
+Property RokWydania As %Integer(MAXVAL = 2019, MINVAL = 1900) [ Required ];
 
 }

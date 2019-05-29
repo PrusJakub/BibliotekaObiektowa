@@ -13,7 +13,7 @@ Property Miejscowosc As %String [ Required ];
 
 Property Ulica As %String [ Required ];
 
-Property Numer As %SmallInt [ Required ];
+Property Numer As %SmallInt(MAXVAL = 9999, MINVAL = 1) [ Required ];
 
 Property Nazwa As %String;
 
