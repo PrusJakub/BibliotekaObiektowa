@@ -1,7 +1,9 @@
 Class Biblioteka.Czytelnik Extends (%Persistent, %Populate, Biblioteka.Osoba)
 {
 
-Relationship Login As Biblioteka.Wypozyczenie [ Cardinality = many, Inverse = Czytelnik ];
+Relationship Wypozyczenia As Biblioteka.Wypozyczenie [ Cardinality = many, Inverse = Czytelnik ];
+
+Relationship Biblioteka As Biblioteka.Biblioteka [ Cardinality = one, Inverse = Czytelnicy ];
 
 Method wypozyczKsiazke(ByRef ksiazka As Ksiazka) As %String
 {
